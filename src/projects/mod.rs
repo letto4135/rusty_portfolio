@@ -64,17 +64,24 @@ pub fn projects_page() -> Template {
 
 #[get("/cairo_outdoors")]
 pub fn cairo_outdoors() -> Template {
+    let base = "/static/cairo_outdoors/".to_owned();
     Template::render("project", Project::new(
         "Cairo Outdoors".to_string(),
         "Cairo Outdoors".to_string(),
         "A website for Cairo Outdoors written as a static website in React, deployed on Firebase"
             .to_string(),
+        vec![
+            base.clone() + "mainPage.png",
+            base.clone() + "climbing.png",
+            base.clone() + "biking.png",
+        ],
         Some("https://cairooutdoors.com".to_string()),
     ))
 }
 
 #[get("/freecell")]
 pub fn freecell() -> Template {
+    let base = "/static/freecell/".to_owned();
     Template::render(
         "project",
         Project::new(
@@ -84,6 +91,11 @@ pub fn freecell() -> Template {
             assignment was to create FreeCell with no additional requirements. I took it upon
             myself to learn GWT in order to do a web version."
                 .to_string(),
+            vec![
+                base.clone() + "InitialGame.PNG",
+                base.clone() + "gameInProgress.PNG",
+                base.clone() + "gameWon.PNG",
+            ],
             Some("https://freecell.mister-life.com".to_string()),
         ),
     )
@@ -91,18 +103,26 @@ pub fn freecell() -> Template {
 
 #[get("/ls_church")]
 pub fn ls_church() -> Template {
+    let base = "/static/ls_church/".to_owned();
     Template::render("project", Project::new(
         "Liberty Street Church".to_string(),
         "Liberty Street Church".to_string(),
         "A website for Liberty Street Church written in Python using Django, deployed on fly.io.
         The pictures are hosted on Cloudinary. All of the websites text is configured via the Django admin."
             .to_string(),
+        vec![
+            base.clone() + "main.png",
+            base.clone() + "bottom.png",
+            base.clone() + "emailjs.png",
+            base.clone() + "django.png",
+        ],
         Some("https://libertystreetchurch.com".to_string()),
     ))
 }
 
 #[get("/rippling_waters_camp")]
 pub fn rippling_waters_camp() -> Template {
+    let base = "/static/rippling_waters/".to_owned();
     Template::render(
         "project",
         Project::new(
@@ -112,6 +132,12 @@ pub fn rippling_waters_camp() -> Template {
             The camps old website was being shut down by the service provider and the person that
             built it no longer wanted to maintain it so I built them a new one."
                 .to_string(),
+            vec![
+                base.clone() + "mainPage.png",
+                base.clone() + "contact.png",
+                base.clone() + "facilities.png",
+                base.clone() + "facilityDetail.png",
+            ],
             Some("https://ripplingwaterscamp.com".to_string()),
         ),
     )
@@ -119,6 +145,7 @@ pub fn rippling_waters_camp() -> Template {
 
 #[get("/timesheet")]
 pub fn timesheet() -> Template {
+    let base = "/static/timesheet/".to_owned();
     Template::render(
         "project",
         Project::new(
@@ -128,6 +155,13 @@ pub fn timesheet() -> Template {
             .net core the app has features like adding employees, pay rates, hours worked,
             timesheet approval, creation of divisons to categorize employees, etc."
                 .to_string(),
+            vec![
+                base.clone() + "seetimesheet-1.png",
+                base.clone() + "createdivision2-2.png",
+                base.clone() + "unapprovedtime-2.png",
+                base.clone() + "updateemployee2-1.png",
+                base.clone() + "payroll.png",
+            ],
             None,
         ),
     )
@@ -135,6 +169,7 @@ pub fn timesheet() -> Template {
 
 #[get("/student_data_warehouse")]
 pub fn warehouse() -> Template {
+    let base = "/static/warehouse/".to_owned();
     Template::render("project", Project::new(
         "Student Data Warehouse".to_string(),
         "Student Data Warehouse".to_string(),
@@ -142,6 +177,14 @@ pub fn warehouse() -> Template {
         Allows the professors and administration to view several metrics on GPA, full time enrollment,
         graduation statistics, and more. The application is deployed locally to the WVUP servers and not
         available to the public.".to_string(),
+        vec![
+            base.clone() + "DemographicData.jpg",
+            base.clone() + "GpaData.jpg",
+            base.clone() + "GraduationData.jpg",
+            base.clone() + "WithdrawalData.jpg",
+            base.clone() + "DegreeChange.jpg",
+            base.clone() + "EnrollmentData.jpg",
+        ],
         None
     ))
 }

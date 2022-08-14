@@ -120,6 +120,13 @@ a.nav-link:hover, a.nav-link:focus {
     background-color: #cccccc;
 }
 
+.project-pic {
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top:1px solid rgba(0,0,0,.5);
+  margin-bottom: 1.5rem;
+}
+
 @media (min-width: 768px){
     .col-md-3 {
         flex: 0 0 100%;

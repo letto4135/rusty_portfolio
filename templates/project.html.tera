@@ -9,6 +9,11 @@
         <h1>{{name}}</h1>
       {% endif %}
       <p style="font-size:1.5rem">{{ description }}</p>
+      {% if pics %}
+        {% for pic in pics %}
+          <img class="project-pic" src="{{pic}}" alt="{{pic}}"/>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 {% endblock %}

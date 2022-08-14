@@ -5,25 +5,24 @@ pub struct Project {
     pub title: String,
     pub name: String,
     pub description: String,
+    pub pics: Vec<String>,
     pub link: Option<String>,
 }
 
 impl Project {
-    pub fn new(title: String, name: String, description: String, link: Option<String>) -> Project {
+    pub fn new(
+        title: String,
+        name: String,
+        description: String,
+        pics: Vec<String>,
+        link: Option<String>,
+    ) -> Project {
         Project {
             title,
             name,
             description,
+            pics,
             link,
         }
-    }
-
-    pub fn default() -> Project {
-        Project::new(
-            "Project Title".to_string(),
-            "Project Name".to_string(),
-            "Project Description".to_string(),
-            Some("https://www.example.com/photo.png".to_string()),
-        )
     }
 }
