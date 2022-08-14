@@ -8,5 +8,6 @@ RUN cargo build --target x86_64-unknown-linux-musl --release
 
 FROM scratch
 COPY --from=builder /target/x86_64-unknown-linux-musl/release/rusty_portfolio .
-COPY --from=builder /templates templates
+COPY templates templates
+COPY static static
 EXPOSE 8000
