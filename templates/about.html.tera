@@ -1,0 +1,44 @@
+{% extends "base" %}
+
+{% block content %}
+  <div class="main-content text-center">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12">
+            <h2 class="aboutHeader">{{ title }}</h2>
+            <hr class="my-4" style="border-top:1px solid rgba(0,0,0,.5)"></hr>
+            <p class="lead">
+              {{ about }}
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-lg-6">
+            <ul class="list-group list-group-flush rounded">
+              <li class="list-group-item list-group-item-custom"><h4>Languages, spoken and non</h4></li>
+              {% for language in languages %}
+                <li class="list-group-item list-group-item-secondary">{{language}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-group list-group-flush rounded">
+              <li class="list-group-item list-group-item-custom"><h4>Frameworks / Libraries</h4></li>
+              {% for framework in frameworks %}
+                <li class="list-group-item list-group-item-secondary">{{framework}}</li>
+              {% endfor %}
+
+            </ul>
+          </div>
+          <div class="col-lg-6" style="margin-bottom:4rem">
+            <ul class="list-group list-group-flush rounded">
+              <li class="list-group-item list-group-item-custom"><h4>Stuff I like to do</h4></li>
+              {% for interest in interests %}
+                <li class="list-group-item list-group-item-secondary">{{interest}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

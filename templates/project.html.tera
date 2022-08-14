@@ -1,0 +1,14 @@
+{% extends "base" %}
+
+{% block content %}
+  <div class="container">
+    <div class="text-center">
+      {% if link %}
+        <h1><a href="{{link}}" target="_blank" rel="norefer">{{name}}</a></h1>
+      {% else %}
+        <h1>{{name}}</h1>
+      {% endif %}
+      <p style="font-size:1.5rem">{{ description }}</p>
+    </div>
+  </div>
+{% endblock %}

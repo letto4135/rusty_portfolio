@@ -1,7 +1,14 @@
 {% extends "base" %}
 
 {% block content %}
-
-  <h1>{{ message }}</h1>
+  <div class="container text-center">
+    <h1>
+     {{ message }}
+    </h1>
+    <h2>
+      Don't mind the mess, I'm not great at design, however,
+      this is written in Rust so at least I know my way around a program or two.
+    </h2>
+  </div>
 
 {% endblock %}

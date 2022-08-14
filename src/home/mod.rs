@@ -6,7 +6,7 @@ pub fn index_page() -> Template {
         "index",
         context! {
             title: "Mister-Life",
-            message: "Built with Rusts Rocket framework!"
+            message: "WIP: New site who dis. Built with Rusts Rocket framework!"
         },
     )
 }
