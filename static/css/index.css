@@ -35,91 +35,6 @@ a.nav-link:hover, a.nav-link:focus {
     background-color: rgba(255,255,255,.75)
 }
 
-.backgroundPhoto {
-    position: absolute;
-    width: 100%;
-    height: width / 1.3;
-    top: 9%;
-    left: 0;
-    filter: grayscale(80%);
-    z-index: -1;
-}
-
-.homeImg {
-    max-width: 95%;
-}
-
-.personalPicsContainer {
-    height: 500px;
-}
-
-.object-fit {
-    height: 500px;
-    width: 500px;
-    object-fit: scale-down;
-}
-
-.carousel-inner {
-    height: 500px;
-    width: 600px;
-}
-
-.carousel--inner {
-    height: 100vh;
-    position: relative;
-    width: 600px;
-}
-
-.carousel--item {
-    height: 500px;
-}
-
-.carousel-item-project {
-    width:auto;
-    max-width: 100%;
-    width: auto\9; /* ie8 */
-    position:absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 110vh;
-}
-
-.carousel-innerModal {
-    max-width: 90%;
-}
-
-.separator {
-    padding: 3rem 0;
-}
-
-.projectCard {
-    padding: 0 1rem;
-    background-color: #f3f3f3;
-    height: 35rem;
-}
-
-.projectCardImg {
-    height: 28rem;
-}
-
-.projectsContainer {
-    margin: 0 auto;
-}
-
-.homeHeaderText {
-    font-size: 2.5rem;
-}
-
-.projectModal {
-    padding: 0 0;
-    margin: 1.5rem;
-}
-
-.modal-content {
-    background-color: #cccccc;
-}
-
 .project-pic {
   width: 100%;
   padding-top: 1.5rem;
@@ -135,59 +50,35 @@ a.nav-link:hover, a.nav-link:focus {
 }
 
 @media (max-width: 768px){
-    .personalPicsContainer {
-        height: unset;
-        max-width: unset;
-    }
 
-    .personalCarousel {
-        width: 450px;
-        height: 450px;
-    }
 }
 
 @media (min-width: 700px){
-    .projectCardImg {
-        height: 28rem;
-    }
 
-    .projectModal {
-        margin: 1rem;
-        height: none !important;
-    }
-
-    .projectCard {
-        height: 36rem;
-    }
 }
 
 @media (min-width: 576px){
     .jumbotron {
         padding: 5.5rem 2rem;
     }
+
+    .navbar-toggler {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .nav-link h5 {
+        font-size: 2em !important;
+    }
+
+    .homeHeader, .aboutHeader, .projectHeader {
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 505px) {
-    .personalPicsContainer {
-        height: 300px;
-    }
-
-    .carousel-inner {
-        height: 300px;
-        position: relative;
-        width: 300px;
-    }
-
-    .carousel-item{
-        height: 300px;
-    }
-
     .jumbotron {
         padding: 0;
-    }
-
-    .homeHeader {
-        margin-top: 1.5rem;
     }
 
     .aboutHeader {
@@ -196,41 +87,10 @@ a.nav-link:hover, a.nav-link:focus {
 }
 
 @media (max-width: 460px){
-    .projectCardImg {
-        height: 20rem;
-    }
-
-    .projectModal {
-        margin: .5 1rem;
-        height: none !important;
-    }
-
-    .projectCard {
-        height: 30rem;
-    }
-}
+  }
 
 @media (max-width: 360px){
-    .personalPicsContainer {
-        height: 250px;
-    }
 
-    .carousel-inner {
-        height: 250px;
-        position: relative;
-        width: 250px;
-    }
-
-    .carousel-item{
-        height: 250px;
-    }
 }
 
-@media (max-width: 345px){
-    .projectCardImg {
-        height: 16rem;
-    }
-    .projectCard {
-        height: 27rem !important;
-    }
 }

@@ -7,15 +7,20 @@ pub fn about_page() -> Template {
         context! {
             title: "About Me",
             about: "
-                My name is Alex, I am pursuing my bachelors degree in software engineering.
-                I have already completed my Associate of Applied Science in Computer Science,
-                and my Associate of Applied Science in Computer & Information Technology.
-                I worked in a CS learn and earn through my school where, over the course of
-                eight months, I developed a Student Data Warehouse application.
-                I also worked in a CIT learn and earn for one year where I assist in managing
-                Active Directory, and several databases for a company of over 400 employees.
-                I am currently working for realtor.com as a Software Engineer.
+                My name is Alex, I have my Associate of Applied Science in Computer Science,
+                and Associate of Applied Science in Computer & Information Technology.
+                I am pursuing my bachelors degree in software engineering and have 2 semesters left.
+                I currently work for realtor.com as a Software Engineer. I have worked as a full stack
+                intern for my college where I created the student data warehouse used by the school.
+                I also worked as a CIT intern for one year where I assisted in managing Active Directory,
+                and several databases for a company of over 400 employees.
+                I have an extreme passion for technology and I am always looking to learn new things which
+                is part of why this site is written in Rust/Rocket instead of JS/React.
             ",
+            pics: vec![
+                "/static/personal_pics/comp_sci.jpeg",
+                "/static/personal_pics/comp_info_tech.jpeg",
+            ],
             languages: vec![
                 "JavaScript (Intermediate - Advanced)",
                 "Python (Intermediate - Advanced)",

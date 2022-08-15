@@ -1,12 +1,12 @@
 {% extends 'base' %}
 
 {% block content %}
-  <div class="container">
+  <div class="container projectHeader">
     <div class="text-center">
       <h1 style="font-size:2rem">
         Ordered from newest to oldest
       </h1>
-      <hr class="my-4" style="border-top:1px solid rgba(0,0,0,.5)">
+      <hr class="my-4" style="border-top:1px solid rgba(0,0,0,.5)"/>
       {% for project in projects %}
         <h2>
           <a href="{{ project.link }}">

@@ -2,13 +2,35 @@
 
 {% block content %}
   <div class="container text-center">
-    <h1>
+    <h1 class="homeHeader">
      {{ message }}
     </h1>
+    <p>Built with Rusts Rocket framework, because I hate myself. Jk, it's not that bad.</p>
+    <hr class="my-4" style="border-top: 1px solid rgba(0,0,0,.5)"/>
+    <h1>Alex Life</h1>
+    <img style="width:50%;margin-top:1.5rem;margin-bottom:1.5rem" src="/static/personal_pics/southernWV.jpg" alt="Me in Southern WV"/>
     <h2>
       Don't mind the mess, I'm not great at design, however,
       this is written in Rust so at least I know my way around a program or two.
     </h2>
+    <h2>
+      <a href="/about">Check out more about me if you want.</a>
+    </h2>
+    <div class="container">
+      <div class="text-center">
+        <hr class="my-4" style="border-top: 1px solid rgba(0,0,0,.5)"/>
+        <h1 style="font-size:2rem">
+          Some of my projects ordered from newest to oldest.
+        </h1>
+        {% for project in projects %}
+          <h2>
+            <a href="{{ project.link }}">
+              {{ project.title }}
+            </a>
+          </h2>
+          <h3 style="font-size:1.25rem;margin-bottom:2rem">{{ project.short_desc }}</h3>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-
 {% endblock %}

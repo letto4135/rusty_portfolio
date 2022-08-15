@@ -20,44 +20,48 @@ impl ProjectShort {
     }
 }
 
+pub fn projects_vec() -> Vec<ProjectShort> {
+    vec![
+        ProjectShort::new(
+            "Liberty Street Church".to_string(),
+            "/project/ls_church".to_string(),
+            "Church site that I built in Python/Django".to_string(),
+        ),
+        ProjectShort::new(
+            "Cairo Outdoors".to_string(),
+            "/project/cairo_outdoors".to_string(),
+            "A small site for a local business that I frequent.".to_string(),
+        ),
+        ProjectShort::new(
+            "Rippling Waters Camp".to_string(),
+            "/project/rippling_waters_camp".to_string(),
+            "Built for a campground in WV.".to_string(),
+        ),
+        ProjectShort::new(
+            "Student Data Warehouse".to_string(),
+            "/project/student_data_warehouse".to_string(),
+            "A project completed through an internship at WVUP.".to_string(),
+        ),
+        ProjectShort::new(
+            "FreeCell".to_string(),
+            "/project/freecell".to_string(),
+            "FreeCell built with Java/GWT.".to_string(),
+        ),
+        ProjectShort::new(
+            "TimeSheet Appliction".to_string(),
+            "/project/timesheet".to_string(),
+            "TimeSheet built in C# .net core for a CS class.".to_string(),
+        ),
+    ]
+}
+
 #[get("/projects")]
 pub fn projects_page() -> Template {
     Template::render(
         "projects",
         context! {
             title: "My Projects",
-            projects: vec![
-            ProjectShort::new(
-                "Liberty Street Church".to_string(),
-                "/project/ls_church".to_string(),
-                "Church site that I built in Python/Django".to_string(),
-            ),
-            ProjectShort::new(
-                "Cairo Outdoors".to_string(),
-                "/project/cairo_outdoors".to_string(),
-                "A small site for a local business that I frequent.".to_string(),
-            ),
-            ProjectShort::new(
-                "Rippling Waters Camp".to_string(),
-                "/project/rippling_waters_camp".to_string(),
-                "Built for a campground in WV.".to_string(),
-            ),
-            ProjectShort::new(
-                "Student Data Warehouse".to_string(),
-                "/project/student_data_warehouse".to_string(),
-                "A project completed through an internship at WVUP.".to_string(),
-            ),
-            ProjectShort::new(
-                "FreeCell".to_string(),
-                "/project/freecell".to_string(),
-                "FreeCell built with Java/GWT.".to_string(),
-            ),
-            ProjectShort::new(
-                "TimeSheet Appliction".to_string(),
-                "/project/timesheet".to_string(),
-                "TimeSheet built in C# .net core for a CS class.".to_string(),
-            )
-        ],
+            projects: projects_vec(),
         },
     )
 }
