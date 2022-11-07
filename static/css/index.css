@@ -47,12 +47,16 @@ a.nav-link:hover, a.nav-link:focus {
         flex: 0 0 100%;
         max-width: 43%;
     }
+    .thumb-img {
+      width: 50%;
+      height: auto;
+    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
     .navbar-toggler-icon {
-        width: 75px !important;
-        height: 75px !important;
+        width: 30px !important;
+        height: 30px !important;
     }
 
     .nav-link h5 {
@@ -63,4 +67,12 @@ a.nav-link:hover, a.nav-link:focus {
         margin-top: 1rem;
     }
 
+    .thumb-img {
+      width: 100%;
+      height: auto;
+    }
+}
+
+.sm-margin-top {
+  margin-top: 1rem;
 }

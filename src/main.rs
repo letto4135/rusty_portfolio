@@ -2,6 +2,7 @@
 extern crate rocket;
 
 mod about;
+mod err_handling;
 mod home;
 mod models;
 mod projects;
@@ -10,12 +11,12 @@ use about::about_page;
 use home::index_page;
 use projects::*;
 use rocket::fs::FileServer;
-use rocket::Request;
+use rocket::response::Redirect;
 use rocket_dyn_templates::Template;
 
-#[catch(404)]
-fn not_found(req: &Request) -> String {
-    format!("Sorry, '{}' is not a valid path.", req.uri())
+#[get("/favicon.ico")]
+fn favicon() -> Redirect {
+    Redirect::to(uri!(""))
 }
 
 #[launch]
@@ -26,9 +27,9 @@ fn rocket() -> _ {
 
     rocket::custom(figment)
         .attach(Template::fairing())
-        .register("/", catchers![not_found])
+        .register("/", catchers![err_handling::not_found])
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![index_page, about_page, projects_page])
+        .mount("/", routes![index_page, about_page, projects_page, favicon])
         .mount(
             "/project",
             routes![
@@ -37,7 +38,8 @@ fn rocket() -> _ {
                 ls_church,
                 rippling_waters_camp,
                 freecell,
-                timesheet
+                timesheet,
+                pokedex,
             ],
         )
 }

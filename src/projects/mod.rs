@@ -8,49 +8,64 @@ pub struct ProjectShort {
     pub title: String,
     pub link: String,
     pub short_desc: String,
+    pub thumb: String,
 }
 
 impl ProjectShort {
-    pub fn new(title: String, link: String, short_desc: String) -> ProjectShort {
+    pub fn new(title: String, link: String, short_desc: String, thumb: String) -> ProjectShort {
         ProjectShort {
             title,
             link,
             short_desc,
+            thumb,
         }
     }
 }
 
 pub fn projects_vec() -> Vec<ProjectShort> {
+    let base = "/static/".to_owned();
     vec![
         ProjectShort::new(
             "Liberty Street Church".to_string(),
             "/project/ls_church".to_string(),
             "Church site that I built in Python/Django".to_string(),
+            base.clone() + "ls_church/main.png",
         ),
         ProjectShort::new(
             "Cairo Outdoors".to_string(),
             "/project/cairo_outdoors".to_string(),
             "A small site for a local business that I frequent.".to_string(),
+            base.clone() + "cairo_outdoors/mainPage.png",
         ),
         ProjectShort::new(
             "Rippling Waters Camp".to_string(),
             "/project/rippling_waters_camp".to_string(),
             "Built for a campground in WV.".to_string(),
+            base.clone() + "rippling_waters/mainPage.png",
         ),
         ProjectShort::new(
             "Student Data Warehouse".to_string(),
             "/project/student_data_warehouse".to_string(),
             "A project completed through an internship at WVUP.".to_string(),
+            base.clone() + "warehouse/GraduationData.jpg",
         ),
         ProjectShort::new(
             "FreeCell".to_string(),
             "/project/freecell".to_string(),
             "FreeCell built with Java/GWT.".to_string(),
+            base.clone() + "freecell/InitialGame.PNG",
         ),
         ProjectShort::new(
             "TimeSheet Appliction".to_string(),
             "/project/timesheet".to_string(),
             "TimeSheet built in C# .net core for a CS class.".to_string(),
+            base.clone() + "timesheet/seetimesheet-1.png",
+        ),
+        ProjectShort::new(
+            "Pokedex".to_string(),
+            "/project/pokedex".to_string(),
+            "Pokedex built in HTML, CSS, and vanilla JS.".to_string(),
+            base.clone() + "pokedex/pokedex1.png",
         ),
     ]
 }
@@ -188,6 +203,22 @@ pub fn warehouse() -> Template {
             base.clone() + "WithdrawalData.jpg",
             base.clone() + "DegreeChange.jpg",
             base.clone() + "EnrollmentData.jpg",
+        ],
+        None
+    ))
+}
+
+#[get("/pokedex")]
+pub fn pokedex() -> Template {
+    let base = "/static/pokedex/".to_owned();
+    Template::render("project", Project::new(
+        "Pokedex".to_string(),
+        "Pokedex".to_string(),
+        "A Pokedex built in HTML, CSS, and vanilla JS. The data is pulled from the PokeAPI. Written for my first web development class in college.".to_string(),
+        vec![
+            base.clone() + "pokedex1.png",
+            base.clone() + "pokedex2.png",
+            base.clone() + "pokedex3.png",
         ],
         None
     ))

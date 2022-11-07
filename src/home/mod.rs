@@ -8,7 +8,7 @@ pub fn index_page() -> Template {
         "index",
         context! {
             title: "Mister-Life",
-            message: "New site who dis.",
+            message: "Welcome, thanks for stopping by!",
             projects: projects_vec(),
         },
     )
