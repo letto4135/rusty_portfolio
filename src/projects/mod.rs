@@ -220,6 +220,6 @@ pub fn pokedex() -> Template {
             base.clone() + "pokedex2.png",
             base.clone() + "pokedex3.png",
         ],
-        None
+        Some("https://pokedex.mister-life.com".to_string()),
     ))
 }
